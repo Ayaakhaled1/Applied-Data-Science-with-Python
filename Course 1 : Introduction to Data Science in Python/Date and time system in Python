@@ -1,0 +1,18 @@
+you should be aware that date and times can be stored in many different ways.
+One of the most common legacy methods for storing the date and time in online transactions systems is based on the offset from the epoch, 
+which is January 1, 1970.
+There's a lot of historical cruft around this, but it's not uncommon to see systems storing the date of a transaction in seconds or milliseconds since this date. 
+So if you see large numbers where you expect to see date and time, you'll need to convert them to make much sense out of the data.
+
+In Python, you can get the current time since the epoch using the time module.
+You can then create a time stamp using the from time stamp function on the date time object. 
+When we print this value out, we see that the year, month, day, and so forth are also printed out.
+
+An explanation of some terminology and conventions is in order.
+
+The epoch is the point where the time starts, and is platform dependent. For Unix, the epoch is January 1, 1970, 00:00:00 (UTC). 
+To find out what the epoch is on a given platform, look at time.gmtime(0).
+
+The term seconds since the epoch refers to the total number of elapsed seconds since the epoch, 
+typically excluding leap seconds. Leap seconds are excluded from this total on all POSIX-compliant platforms.
+https://docs.python.org/3/library/time.html
